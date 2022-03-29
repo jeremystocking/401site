@@ -1,0 +1,245 @@
+h2
+{
+Text-align:center;
+}
+
+h3
+{
+top: 50%
+left: 50%
+Text-align:center;
+}
+
+h4
+{
+display: flex;
+justify-content: space-between;
+align-items: center;
+Text-align:center;
+}
+
+h5
+{
+border-style: inset;
+border-width: 2px; 
+border-bottom-width: 4px;
+border-right-width: 4px;
+border-color: MidnightBlue;
+padding: 1%;
+margin 90%;
+top: 50%
+left: 50%
+Text-align:center;
+}
+
+Form
+{
+Text-align:center;
+}
+
+button
+{
+Text-align: center;
+}
+
+.banner 
+{
+  overflow:hidden;
+  height: 100px;
+  background-color: MidnightBlue;
+  border-radius: 0% 10% 10% 0%;
+}
+
+.logo 
+{
+  height: 100px;
+  width: 100px;
+  float:left;
+  Background-color: MidnightBlue;
+}
+
+.left
+{
+float:left;
+}
+
+.rightBanner
+{
+height: 100px;
+Font-size: 32px;
+Font-family: Copperplate;
+color: honeydew;
+Vertical-align: middle;
+display: flex;
+Align-items: center; 
+justify-content: space-evenly;
+}
+
+.right
+{
+float:right;
+}
+
+a:link {
+  color: MidnightBlue;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: Olive;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: OliveDrab;
+  background-color: transparent;
+}
+
+a:active {
+  color: PeachPuff;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+#warning
+{
+color: Red;
+}
+
+body
+{
+Font-family:fantasy;
+background-color: HoneyDew;
+}
+
+table 
+{
+width: 90%;
+margin-left:5%;
+margin-right:5%;
+text-align: center;
+border-collapse: collapse;
+}
+
+table > thead > tr > th 
+{
+background-color: CCFFCC;
+border: solid 1px MidnightBlue;
+border-bottom-width: 2px;
+border-right-width: 2px;
+padding 10 10;
+}
+
+table > tr, td
+{
+background-color: #D8FFD8;
+border: solid 1px MidnightBlue;
+border-bottom-width: 2px;
+border-right-width: 2px;
+padding: 10 10;
+}
+
+.description 
+{
+	Text-align: left;
+	font-size: 12px;
+}
+
+.cvex
+{
+border: solid 1px MidnightBlue;
+border-bottom-width: 2px;
+border-right-width: 2px;
+}
+
+.cave
+{
+border: solid 2px MidnightBlue;
+border-bottom-width: 1px;
+border-right-width: 1px;
+}
+
+#footer 
+{
+  padding: 10px;
+  position: fixed;
+  font-size: 11px;
+  text-align: center;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+#footer > ul 
+{
+  list-style: none;
+}
+
+#footer > li 
+{
+  display: inline;
+  border-left: solid 1px #758190;
+  padding: 0 10px;
+  color: #758190;
+}
+
+#footer > li.first 
+{
+  border-left: none;
+}
+
+.box 
+{
+width: 200px;
+height: 200px;
+justify-content: flex-start;
+margin: 20px;
+}
+
+.row
+{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;	
+}
+
+.babyHeader
+{
+padding: 2px;
+font-size: 12px;
+text-align: center;
+position: relative;
+
+}
+
+.babyNav
+{
+font-size: 6px;
+text-align: center;
+}
+
+.babyLogo
+{
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 33%;
+  border-style: solid;
+}
+
+.babyLogoText
+{
+  font-size: 6px;
+  padding: 9px 0px 0px 0px;
+}
+
+.babyContent
+{
+  font-size: 6px;
+  text-align: center;
+}
+
