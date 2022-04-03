@@ -1,6 +1,11 @@
+h6
+{
+ Text-align: center;
+}
+
 h2
 {
-Text-align:center;
+Text-align: center;
 }
 
 h3
@@ -196,6 +201,14 @@ width: 200px;
 height: 200px;
 justify-content: flex-start;
 margin: 20px;
+}
+
+.bigBox
+{
+width: 300px;
+height: 300px;
+margin: auto;
+border: 1px solid black;
 }
 
 .row

@@ -11,10 +11,23 @@
                 </div>
                 <div class="rightBanner">
                 	Edit Theme
-		</div>
+                </div>
         </div>
-	<div class="row">
-	<div class ="box" id="<?php echo $_GET['id'];?>
+    <?php $fonts = array('serif', 'sans-serif', 'monospace', 'cursive', 'fantasy', 'system-ui', 'ui-serif', 'ui-sans-serif', 'ui-monospace', 'ui-rounded', 'emoji', 'math', 'fangsong');
+        $id = $_GET['id'];
+        $color = $_GET['color'];
+        $comp = $_GET['comp'];
+        $mono = $_GET['mono'];
+        $fontFamily = $_GET['fontFamily'];
+        session_start();
+        $_SESSION['id'] = $id;
+        $_SESSION['color'] = $color;
+        $_SESSION['comp'] = $comp;
+        $_SESSION['mono'] = $mono;
+        $_SESSION['fontFamily'] = $fontFamily;
+    ?>
+    <h2>
+	<div class ="bigBox" id="<?php echo $_GET['id'];?>
 				" style="background-color:<?php echo $_GET['color'];?>
 				; color:<?php echo $_GET['comp'];?>
 				; font-family:<?php echo $_GET['fontFamily'];?>"> 
@@ -47,10 +60,10 @@
                        		</div>
                 </div>			
 	</div>
-	</div>
-	<?php
-		$fonts = array("serif", "sans-serif", "monospace", "cursive", "fantasy", "system-ui", "ui-serif", "ui-sans-serif", "ui-monospace", "ui-rounded", "emoji", "math", "fangsong");
-	?>
+    </h2>
+    <form method="post" action="createSite.php">
+    <input type="submit" name="accept" id="accept" value="Accept">
+    </form>
 	<h5>
                 <form method="post" action="updateTheme.php">
 			<?php $id = $_GET['id'];?>
@@ -60,31 +73,33 @@
                         <input type="text" id="comp" name="comp" value="<?php echo $_GET['comp'];?>"><br><br>
 			<label for="mono">Secondary Color:</label>
 			<input type="text" id="mono" name="mono" value="<?php echo $_GET['mono'];?>"><br><br>
-
 			<label for="fontFamily">Font:</label>
-                        <select name="fontFamily" id="fontFamily">
-                        <?php
-                        	foreach ($fonts as $font) {
-                                	echo '<option value="';
-                                        echo $font;
-                                        echo '"';
-					if($font == $_GET[fontFamily]){
-						echo ' selected';
-					};
-					echo '>';
-                                        echo $font;
-                                        echo '</option><br>';
-                        	}
-                        ?>
+                <select name="fontFamily" id="fontFamily">
+                <option value="bug">Doesnt work on Heroku</option>
+
+//			<?php
+//			foreach ($fonts as $font) { echo '<option value="';
+//                                        echo $font;
+//                                        echo '"';
+//					if($font == $_GET[fontFamily]){
+//						echo ' selected';
+//					};
+//					echo '>';
+//                                        echo $font;
+//                                        echo '</option><br>';}; ?>
+
 			</select><br><br>
                         <input type="submit" name="update" id="update" value="Update">
 	        </form>
+     </h5>
+
 	 <div id="footer">
 		<li class="first">(c)Jeremy Stocking</li>
                 <li>Boise State University</li>
                 <li>College of Engineering</li>
                 <li>Computer Science Student</li>
         </div>
+
         </body>
 </html>
 

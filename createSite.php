@@ -27,12 +27,129 @@
 	</h4>
 	
 	<h2>
-		Create Website
-	</h2>
-
-	<h3>
-		[Here is a map of your current website]
-	</h3>
-
+		Create Website<br>Preview:<br>
+    <?php session_start();?>
+    <div class="bigBox" id="<?php echo $_SESSION['id'];?>
+                " style="background-color:<?php echo $_SESSION['color'];?>
+                ; color:<?php echo $_SESSION['comp'];?>
+                ; font-family:<?php echo $_SESSION['fontFamily'];?>">
+        <div class="babyHeader">
+            <?php if($_SESSION['dinerName'] == ''){
+                echo 'Header';
+            }else{
+                echo $_SESSION['dinerName'];
+            }?>
+            <div class="babyLogo" style="background-color:<?php echo $_SESSION['mono'];?>">
+                <div class="babyLogoText" style="color:<?php echo $_SESSION['comp'];?>">
+                    LOGO
+                </div>
+            </div>
+            </div>
+            <div class="babyNav" style=" background-color:<?php echo $_SESSION['mono']?>">
+            <hr>Navigation Bar<hr>
+            </div>
+            <div class="babyContent">
+            <br><b>Breakfast Hours</b><br>
+<?php if($_SESSION['bStart'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['bStart'];
+}?> <?php if($_SESSION['bAMPM1'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['bAMPM1'];
+}?> - <?php if($_SESSION['bEnd'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['bEnd'];
+}?> <?php if($_SESSION['bAMPM2'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['bAMPM2'];
+}?>
+                        <br><b>Lunch Hours</b><br>
+<?php if($_SESSION['lStart'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['lStart'];
+}?> <?php if($_SESSION['lAMPM1'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['lAMPM1'];
+}?> - <?php if($_SESSION['lEnd'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['lEnd'];
+}?> <?php if($_SESSION['lAMPM2'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['lAMPM2'];
+}?>
+                        <br><b>Dinner Hours</b><br>
+<?php if($_SESSION['dStart'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['dStart'];
+}?> <?php if($_SESSION['dAMPM1'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['dAMPM1'];
+}?> - <?php if($_SESSION['dEnd'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['dEnd'];
+}?> <?php if($_SESSION['dAMPM2'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['dAMPM2'];
+}?>
+                        <br><b>Brunch Hours</b><br>
+<?php if($_SESSION['wStart'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['wStart'];
+}?> <?php if($_SESSION['wAMPM1'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['wAMPM1'];
+}?> - <?php if($_SESSION['wEnd'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['wEnd'];
+}?> <?php if($_SESSION['wAMPM2'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['wAMPM2'];
+}?>
+                        <br><b>Bar Hours</b><br>
+<?php if($_SESSION['barStart'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['barStart'];
+}?> <?php if($_SESSION['barAMPM1'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['barAMPM1'];
+}?> - <?php if($_SESSION['barEnd'] == ''){
+    echo 'XX:XX';
+}else{
+    echo $_SESSION['barEnd'];
+}?> <?php if($_SESSION['barAMPM2'] == ''){
+    echo 'AM';
+}else{
+    echo $_SESSION['barAMPM2'];
+}?>
+                            <div>
+                                    <br><b>Make A Reservation</b>
+                                        <br><b>View the Menu</b>
+                                        <br><b>Order Takeout</b>
+                               </div>
+                            <div>
+                                <br><b>Address: <?php echo $_SESSION['address'];?></b>
+                                <br><b>Phone: <?php echo $_SESSION['phone'];?></b>
+                            </div>
+                </div>
+            </div>
+        </h2>
 	</body>
 </html>
