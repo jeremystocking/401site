@@ -3,7 +3,8 @@
 if(isset($_POST['userID']))
 {
 // $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
-$con = mysqli_connect('localhost', 'root', 'root','db_diner');
+//$con = mysqli_connect('localhost', 'root', 'root','db_diner');
+$con = mysqli_connect('us-cdbr-east-05.cleardb.net', 'b65f216f7d9d91', '91cd1c65', 'heroku_2dce40f70e6cf53');
 if($mysqli->connect_error){
 echo 'Errno: '.$mysqli->connect_errno;
 echo '<br>';
