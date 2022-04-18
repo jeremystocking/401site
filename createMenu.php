@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if($_SESSION["loggedIn"] != "true"){
+        Header("Location: index.php");
+        exit;
+    }
+?>
 <html>
 
         <link rel="stylesheet" href="style.css">
@@ -41,8 +48,8 @@
 	<h5>
 
 		<?php
-			$con = mysqli_connect('localhost', 'root', 'root','db_diner');
-			$sql = "SELECT itemName, price, description FROM tbl_menuItems";
+			$con = mysqli_connect('us-cdbr-east-05.cleardb.net', 'b65f216f7d9d91', '91cd1c65', 'heroku_2dce40f70e6cf53');
+			$sql = "SELECT itemName, price, description, id FROM tbl_menuItems";
 			$rs = mysqli_query($con, $sql);
 		?>
 		Menu:
@@ -51,14 +58,15 @@
 				<tr>
 					<th>Item Name:</th>
 					<th>Price:</th>
-					<th>Description:</th>		
+					<th>Description:</th>
+                    <th>X</th>
 				</tr>
 			</thead>
 		<tbody>
 		<?php
 			if($rs->num_rows > 0){
 				while($row = $rs->fetch_assoc()){
-					echo "<tr><td>" . $row["itemName"] . "</td><td>" . $row["price"] . "</td><td><p class=\"description\">" . $row["description"]  . "</p></td></tr>";
+					echo "<tr><td>" . $row["itemName"] . "</td><td>" . $row["price"] . "</td><td><p class=\"description\">" . $row["description"]  . "</p></td><td><a href=\"removeItem.php?id=" . $row["id"] . "\">X</a></td></tr>";
 				}
 			} else {
 				echo "Table is Empty";
@@ -68,6 +76,12 @@
 		</table>
 
 	</h5>
+    <div id="footer">
+                <li class="first">(c)Jeremy Stocking</li>
+                <li>Boise State University</li>
+                <li>College of Engineering</li>
+                <li>Computer Science Student</li>
+    </div>
 
-        </body>
+    </body>
 </html>

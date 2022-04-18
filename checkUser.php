@@ -46,6 +46,7 @@ else
 if($success){
 	session_start();
 	$_SESSION["userID"] = $userID;
+    $_SESSION["loggedIn"] = "true";
 	Header($successDestination . "?userID=" . $userID);
 	exit;
 }

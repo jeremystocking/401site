@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if($_SESSION["loggedIn"] != "true"){
+        Header("Location: index.php");
+        exit;
+    }
+?>
 <html>
 
                 <header><title>Edit Theme</title></header>
@@ -13,7 +20,7 @@
                 	Edit Theme
                 </div>
         </div>
-    <?php $fonts = array('serif', 'sans-serif', 'monospace', 'cursive', 'fantasy', 'system-ui', 'ui-serif', 'ui-sans-serif', 'ui-monospace', 'ui-rounded', 'emoji', 'math', 'fangsong');
+    <?php
         $id = $_GET['id'];
         $color = $_GET['color'];
         $comp = $_GET['comp'];
@@ -75,7 +82,19 @@
 			<input type="text" id="mono" name="mono" value="<?php echo $_GET['mono'];?>"><br><br>
 			<label for="fontFamily">Font:</label>
                 <select name="fontFamily" id="fontFamily">
-                <option value="bug">Doesnt work on Heroku</option>
+                <option value='serif' <?php if($_SESSION['fontFamily'] == 'serif'){ echo 'selected';}?> >Serif</option>
+                <option value='sans-serif' <?php if($_SESSION['fontFamily'] == 'sans-serif'){ echo 'selected';}?> >Sans-Serif</option>
+                <option value='monospace' <?php if($_SESSION['fontFamily'] == 'monospace'){ echo 'selected';}?> >Monospace</option>
+                <option value='cursive' <?php if($_SESSION['fontFamily'] == 'cursive'){ echo 'selected';}?> >Cursive</option>
+                <option value='fantasy' <?php if($_SESSION['fontFamily'] == 'fantasy'){ echo 'selected';}?> >Fantasy</option>
+                <option value='system-ui' <?php if($_SESSION['fontFamily'] == 'system-ui'){ echo 'selected';}?> >System UI</option>
+                <option value='ui-serif' <?php if($_SESSION['fontFamily'] == 'ui-serif'){ echo 'selected';}?> >UI Serif</option>
+                <option value='ui-sans-serif' <?php if($_SESSION['fontFamily'] == 'ui-sans-serif'){ echo 'selected';}?> >UI Sans-Serif</option>
+                <option value='ui-monospace' <?php if($_SESSION['fontFamily'] == 'ui-monospace'){ echo 'selected';}?> >UI Monospace</option>
+                <option value='ui-rounded' <?php if($_SESSION['fontFamily'] == 'ui-rounded'){ echo 'selected';}?> >UI Rounded</option>
+                <option value='emoji' <?php if($_SESSION['fontFamily'] == 'emoji'){ echo 'selected';}?> >Emoji</option>
+                <option value='math' <?php if($_SESSION['fontFamily'] == 'math'){ echo 'selected';}?> >Math</option>
+                <option value='fangsong' <?php if($_SESSION['fontFamily'] == 'fangsong'){ echo 'selected';}?> >Fangsong</option>
 
 //			<?php
 //			foreach ($fonts as $font) { echo '<option value="';
@@ -99,7 +118,12 @@
                 <li>College of Engineering</li>
                 <li>Computer Science Student</li>
         </div>
-
+        <div id="footer">
+                    <li class="first">(c)Jeremy Stocking</li>
+                    <li>Boise State University</li>
+                    <li>College of Engineering</li>
+                    <li>Computer Science Student</li>
+        </div>
         </body>
 </html>
 

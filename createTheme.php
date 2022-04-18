@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if($_SESSION["loggedIn"] != "true"){
+        Header("Location: index.php");
+        exit;
+    }
+?>
 <html>
 
         <link rel="stylesheet" href="style.css">
@@ -110,5 +117,11 @@
 		};
 	?>
 	</div>
+    <div id="footer">
+                <li class="first">(c)Jeremy Stocking</li>
+                <li>Boise State University</li>
+                <li>College of Engineering</li>
+                <li>Computer Science Student</li>
+    </div>
 	</body>
 </html>

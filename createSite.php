@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if($_SESSION["loggedIn"] != "true"){
+        Header("Location: index.php");
+        exit;
+    }
+?>
 <html>
 
         <link rel="stylesheet" href="style.css">
@@ -9,6 +16,9 @@
 		<div class="logo">
 			<img src = "logo.png">
 		</div>
+        <div class="rightBanner">
+                    Create Website
+        </div>
 	</div>	
 	<h4>		
 		<a href="homePage.php" class="left" title="Home">
@@ -27,7 +37,7 @@
 	</h4>
 	
 	<h2>
-		Create Website<br>Preview:<br>
+		<br>Preview:<br>
     <?php session_start();?>
     <div class="bigBox" id="<?php echo $_SESSION['id'];?>
                 " style="background-color:<?php echo $_SESSION['color'];?>
@@ -151,5 +161,15 @@
                 </div>
             </div>
         </h2>
+        <form method="post" action="writeSite.php">
+        <input type="submit" name="accept" id="accept" value="Accept">
+        </form>
+        <?php echo $_GET['message'];?>
+        <div id="footer">
+                    <li class="first">(c)Jeremy Stocking</li>
+                    <li>Boise State University</li>
+                    <li>College of Engineering</li>
+                    <li>Computer Science Student</li>
+        </div>
 	</body>
 </html>

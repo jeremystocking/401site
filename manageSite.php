@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if($_SESSION["loggedIn"] != "true"){
+        Header("Location: index.php");
+        exit;
+    }
+?>
 <html>
 
         <link rel="stylesheet" href="style.css">
@@ -35,5 +42,11 @@
 		<br><br>
 		[Here is a form to change name, change price or change description of an item on the menu]
 	</h3>
+        <div id="footer">
+                    <li class="first">(c)Jeremy Stocking</li>
+                    <li>Boise State University</li>
+                    <li>College of Engineering</li>
+                    <li>Computer Science Student</li>
+        </div>
         </body>
 </html>

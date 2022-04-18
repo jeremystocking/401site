@@ -1,5 +1,12 @@
+<?php
+    session_start();
+    if($_SESSION["loggedIn"] != "true"){
+        Header("Location: index.php");
+        exit;
+    }
+?>
 <html>
-
+    
         <link rel="stylesheet" href="style.css">
 	<body>	
         	<header><title>Home Page</title></header>
@@ -20,7 +27,7 @@
 
                 <a href="manageSite.php">To Manage Website Page</a>
 		
-		<a href="index.php" class="right" title="Sign Out">
+		<a href="signOut.php" class="right" title="Sign Out">
                 <img src="signOutIcon.png" alt="Sign Out Icon" width="50" height="50">
                 </a>
 	</h4>
@@ -35,5 +42,5 @@
                 <li>Boise State University</li>
                 <li>College of Engineering</li>
                 <li>Computer Science Student</li>
-        </div>
+    </div>
 </html>
