@@ -31,7 +31,7 @@
 
                 <a href="createLanding.php">To Create Landing Page</a>
 		
-		<a href="index.php" class="right" title="Sign Out">
+		<a href="signOut.php" class="right" title="Sign Out">
                 <img src="signOutIcon.png" alt="Sign Out Icon" width="50" height="50">
  		</a>
 	</h4>

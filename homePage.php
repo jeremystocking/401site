@@ -6,8 +6,10 @@
     }
 ?>
 <html>
-    
+    <head>
         <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    </head>
 	<body>	
         	<header><title>Home Page</title></header>
 	<div class="banner">
@@ -33,9 +35,16 @@
 	</h4>
 
 	<h2>
-		Welcome <?php 
-				session_start();
-				echo $_SESSION['userID']; ?> !	
+        <div class="welcome">
+            Welcome <?php
+            session_start();
+            echo $_SESSION['userID']; ?> !
+            <script>
+                $(document).ready(function() {
+                $(".welcome").hide().fadeIn(4000);
+        });
+</script>
+        </div>
 	</h2>
 	<div id="footer">
                 <li class="first">(c)Jeremy Stocking</li>

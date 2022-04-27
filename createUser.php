@@ -24,6 +24,12 @@ echo 'Error: '.$mysqli->connect_error;
 
 $userID = $_POST['userID'];
 $pword = $_POST['pword'];
+$pword2 = $_POST['pword2'];
+
+if($pword !== $pword2){
+    header("Location: index.php?message=Passwords%20must%20match");
+    exit;
+}
 
 // database insert SQL code
 $sql = "INSERT INTO `tbl_userInfo` (`id`, `userID`, `pword`) VALUES ('0', '$userID', '$pword')";

@@ -65,22 +65,25 @@ padding: 10 10;
     Text-align: left;
     font-size: 12px;
 }
+
+#copyPaste
+{
+Text-align: left;
+font-size: 12px;
+border: solid 1px;
+}
 ");
 
 fclose($userStyle);
 
-$userLandingPage = fopen("userLandingPage.php", "w");
+$userLandingPage = fopen("userLandingPage.html", "w");
 fwrite($userLandingPage, '<html><link rel="stylesheet" href="userStyle.css"><body><h1>');
 fwrite($userLandingPage, $_SESSION['dinerName']);
 
 $logoContent = '<div class="logo"><div class="logoText">' . 'LOGO' . '</div></div>';
 fwrite($userLandingPage, $logoContent);
 
-fwrite($userLandingPage, "</h1><hr><div class=\"nav\"><a href=\"userMakeReservation.php\">Make a Reservation</a> | <a href=\"userViewMenu.php\">View Menu</a> | <a href=\"userOrderTakeout.php\">Order Takeout</a></div><hr>");
-
-
-fwrite($userLandingPage, '<div class="content">Phone: ' . $_SESSION['phone'] . '<br></div>');
-fwrite($userLandingPage, '<div class="content">Address: ' . $_SESSION['address'] . '<br></div>');
+fwrite($userLandingPage, "</h1><hr><div class=\"nav\"><a href=\"userMakeReservation.html\">Make a Reservation</a> | <a href=\"userViewMenu.html\">View Menu</a> | <a href=\"userOrderTakeout.html\">Order Takeout</a></div><hr>");
 
 $breakfastHours = '<div class="content"><br><b>Breakfast Hours</b><br>' . $_SESSION['bStart'] . $_SESSION['bAMPM1'] . ' - ' . $_SESSION['bEnd'] . $_SESSION['bAMPM2'] . "</div>";
 fwrite($userLandingPage, $breakfastHours);
@@ -97,29 +100,33 @@ fwrite($userLandingPage, $brunchHours);
 $barHours = '<div class="content"><br><b>Bar Hours</b><br>' . $_SESSION['barStart'] . $_SESSION['barAMPM1'] . ' - ' . $_SESSION['barEnd'] . $_SESSION['barAMPM2'] . "</div>";
 fwrite($userLandingPage, $barHours);
 
-$reservationLink = '<div class="content"><br><b><a href="userMakeReservation.php">Make a Reservation</a></b>';
+$reservationLink = '<div class="content"><br><b><a href="userMakeReservation.html">Make a Reservation</a></b>';
 fwrite($userLandingPage, $reservationLink);
 
-$viewMenuLink = '<div class="content"><br><b><a href="userViewMenu.php">View Menu</a></b>';
+$viewMenuLink = '<div class="content"><br><b><a href="userViewMenu.html">View Menu</a></b>';
 fwrite($userLandingPage, $viewMenuLink);
 
-$takeoutLink = '<div class="content"><br><b><a href="userOrderTakeout.php">Order Takeout</a></b>';
+$takeoutLink = '<div class="content"><br><b><a href="userOrderTakeout.html">Order Takeout</a></b>';
 fwrite($userLandingPage, $takeoutLink);
 
-$aboutUsLink = '<div class="content"><br><b><a href="userLandingPage.php">About Us</a></b>';
-fwrite($userLandingPage, $aboutUsLink);
+$aboutUsLink = '<div class="content"><br><b><a href="userLandingPage.html">About Us</a></b><br>';
 
-fwrite($userLandingPage, "</div></body></html>");
+fwrite($userLandingPage, '<div class="content"><br>Phone: ' . $_SESSION['phone'] . '<br></div>');
+fwrite($userLandingPage, '<div class="content">Address: ' . $_SESSION['address'] . '<br></div></div>');
+
+fwrite($userLandingPage, '<p id="copyPaste"><u>To Download copy and paste the following text in terminal:</u><br> mkdir userSite<br> cd userSite<br> curl dinermaker.herokuapp.com/userStyle.css > userStyle.css<br> curl dinermaker.herokuapp.com/userLandingPage.html > userLandingPage.html<br> curl dinermaker.herokuapp.com/userMakeReservation.html > userMakeReservation.html<br> curl dinermaker.herokuapp.com/userViewMenu.html > userViewMenu.html<br> curl dinermaker.herokuapp.com/userOrderTakeout.html > userOrderTakeout.html<br></p>');
+
+fwrite($userLandingPage, "</body></html>");
 fclose($userLandingPage);
 
 
-$userMakeReservation = fopen("userMakeReservation.php", "w");
+$userMakeReservation = fopen("userMakeReservation.html", "w");
 fwrite($userMakeReservation, '<html><link rel="stylesheet" href="userStyle.css"><body><h1>');
 fwrite($userMakeReservation, "Make a Reservation");
 fwrite($userMakeReservation, $logoContent);
-fwrite($userMakeReservation, "</h1><hr><div class=\"nav\"><a href=\"userMakeReservation.php\">Make a Reservation</a> | <a href=\"userViewMenu.php\">View Menu</a> | <a href=\"userOrderTakeout.php\">Order Takeout</a></div><hr>");
+fwrite($userMakeReservation, "</h1><hr><div class=\"nav\"><a href=\"userMakeReservation.html\">Make a Reservation</a> | <a href=\"userViewMenu.html\">View Menu</a> | <a href=\"userOrderTakeout.html\">Order Takeout</a></div><hr>");
 
-$rsrv = "<form action=\"userLandingPage.php\">
+$rsrv = "<form action=\"userLandingPage.html\">
     <label for=\"date\">Date: </label>
     <input type=\"text\" id=\"date\"><br><br>
     <label for=\"name\">Name: </label>
@@ -139,11 +146,11 @@ fwrite($userMakeReservation, $aboutUsLink);
 fwrite($userMakeReservation, "</div></body></html>");
 fclose($userMakeReservation);
 
-$userViewMenu = fopen("userViewMenu.php", "w");
+$userViewMenu = fopen("userViewMenu.html", "w");
 fwrite($userViewMenu, '<html><link rel="stylesheet" href="userStyle.css"><body><h1>');
 fwrite($userViewMenu, "The Menu");
 fwrite($userViewMenu, $logoContent);
-fwrite($userViewMenu, "</h1><hr><div class=\"nav\"><a href=\"userMakeReservation.php\">Make a Reservation</a> | <a href=\"userViewMenu.php\">View Menu</a> | <a href=\"userOrderTakeout.php\">Order Takeout</a></div><hr>");
+fwrite($userViewMenu, "</h1><hr><div class=\"nav\"><a href=\"userMakeReservation.html\">Make a Reservation</a> | <a href=\"userViewMenu.html\">View Menu</a> | <a href=\"userOrderTakeout.html\">Order Takeout</a></div><hr>");
 
     $con = mysqli_connect('us-cdbr-east-05.cleardb.net', 'b65f216f7d9d91', '91cd1c65', 'heroku_2dce40f70e6cf53');
     $sql = "SELECT itemName, price, description, id FROM tbl_menuItems";
@@ -177,11 +184,11 @@ fwrite($userViewMenu, $aboutUsLink);
 fwrite($userViewMenu, "</div></body></html>");
 fclose($userViewMenu);
 
-$userOrderTakeout = fopen("userOrderTakeout.php", "w");
+$userOrderTakeout = fopen("userOrderTakeout.html", "w");
 fwrite($userOrderTakeout, '<html><link rel="stylesheet" href="userStyle.css"><body><h1>');
 fwrite($userOrderTakeout, "Order Takeout");
 fwrite($userOrderTakeout, $logoContent);
-fwrite($userOrderTakeout, "</h1><hr><div class=\"nav\"><a href=\"userMakeReservation.php\">Make a Reservation</a> | <a href=\"userViewMenu.php\">View Menu</a> | <a href=\"userOrderTakeout.php\">Order Takeout</a></div><hr>");
+fwrite($userOrderTakeout, "</h1><hr><div class=\"nav\"><a href=\"userMakeReservation.html\">Make a Reservation</a> | <a href=\"userViewMenu.html\">View Menu</a> | <a href=\"userOrderTakeout.html\">Order Takeout</a></div><hr>");
 
 $con = mysqli_connect('us-cdbr-east-05.cleardb.net', 'b65f216f7d9d91', '91cd1c65', 'heroku_2dce40f70e6cf53');
 $sql = "SELECT itemName, price, description, id FROM tbl_menuItems";
@@ -207,7 +214,7 @@ if($rs->num_rows > 0){
     echo "Table is Empty";
 }
 fwrite($userOrderTakeout, "</tbody></table>");
-fwrite($userOrderTakeout, '<div class="content"><br><b><a href="userLandingPage.php">Place Order</a></b>');
+fwrite($userOrderTakeout, '<div class="content"><br><b><a href="userLandingPage.html">Place Order</a></b>');
 
 fwrite($userOrderTakeout, $reservationLink);
 fwrite($userOrderTakeout, $viewMenuLink);
@@ -217,6 +224,6 @@ fwrite($userOrderTakeout, $aboutUsLink);
 fwrite($userOrderTakeout, "</div></body></html>");
 fclose($userOrderTakeout);
 
-header("Location: userLandingPage.php");
+header("Location: userLandingPage.html");
 exit;
 ?>
